@@ -3,29 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>📦 Kauft unseren Kram 📦</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <title>Kleinanzeigen Ads</title>
     <script defer src="script.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body class="bg-gray-100">
-    <header class="bg-green-500 text-white p-6">
-        <h1 class="text-2xl font-bold text-center">📦 Kauft unseren Kram 📦</h1>
+
+    <!-- Header -->
+    <header class="bg-green-500 text-white p-4 text-center">
+        <h1 class="text-3xl font-bold">My Kleinanzeigen Ads</h1>
     </header>
-    
-    <div class="flex">
-        <!-- Sidebar -->
-        <nav class="w-1/4 bg-white shadow-lg p-4">
-            <h3 class="text-lg font-semibold mb-4">Kategorien</h3>
-            <ul id="category-list" class="space-y-4">
-                <!-- Categories will be dynamically inserted here -->
-            </ul>
-        </nav>
-        
-        <!-- Main Area -->
-        <main class="w-3/4 p-6">
-            <div id="ads-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+
+    <!-- Main Content -->
+    <div class="container mx-auto py-8">
+        <!-- Category Filter Buttons -->
+        <div class="mb-6">
+            <h2 class="text-xl font-semibold mb-4">Filter by Category</h2>
+            <div class="flex space-x-4">
+                <button onclick="filterByCategory('Plants')" class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">🪴  Pflanzen 🪴 </button>
+                <button onclick="filterByCategory('Hobbies')" class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">🏓  Hobbies  🖌️</button>
+                <button onclick="filterByCategory('Office')" class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">📈  Büro 🖇️</button>
+                <button onclick="filterByCategory('Electronic')" class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">🎧  Elektronik 🎮</button>
+                <button onclick="filterByCategory('DIY')" class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">🪚  Heimwerken 🪵</button>
+                <button onclick="filterByCategory('Furniture')" class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">🛋️  Möbel 🪑</button>
+                <button onclick="filterByCategory('Outdoor')" class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">⛺️  Für Draußen 🏕️</button>
+                <button onclick="filterByCategory('Books')" class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">📚  Bücher & DVD 📀</button>
+                <button onclick="filterByCategory('Kitchen')" class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">⏲️ Küchenutensilien 🍳</button>
+                <button onclick="filterByCategory('Clothes')" class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">👕 Kleidung 👖</button>
+                <button onclick="loadAds()" class="px-4 py-2 bg-gray-500 text-white rounded hover:bg-gray-600">Show All</button>
             </div>
-        </main>
+        </div>
+
+        <!-- Ads Grid -->
+        <div id="ads-container" class="grid grid-cols-4 gap-4">
+            <!-- The dynamically loaded ads will be injected here by script.js -->
+        </div>
     </div>
-</body>
-</html>
+
+</
