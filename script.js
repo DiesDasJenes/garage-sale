@@ -12,6 +12,14 @@ const adUrls = [
         category: 'Plants' 
     },
     { 
+        url: 'https://www.kleinanzeigen.de/s-anzeige/uebertoepfe/2789317986-246-9436',
+        category: 'Plants' 
+    },
+    { 
+        url: 'https://www.kleinanzeigen.de/s-anzeige/makramee-blumenampel/2753680030-89-9436',
+        category: 'Plants' 
+    },
+    { 
         url: 'https://www.kleinanzeigen.de/s-anzeige/everlasting-wet-palette-kickstarter-edition/2861823768-249-9436',
         category: 'Hobbies' 
     },
@@ -169,14 +177,6 @@ const adUrls = [
     },
     { 
         url: 'https://www.kleinanzeigen.de/s-anzeige/holz-tischbeine-80cm/2670023655-87-9436',
-        category: 'DIY' 
-    },
-    { 
-        url: 'https://www.kleinanzeigen.de/s-anzeige/uebertoepfe/2789317986-246-9436',
-        category: 'DIY' 
-    },
-    { 
-        url: 'https://www.kleinanzeigen.de/s-anzeige/makramee-blumenampel/2753680030-89-9436',
         category: 'DIY' 
     },
     { 
@@ -395,7 +395,7 @@ async function loadAds(category = null) {
                 cardLink.className = 'inline-block px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600';
                 cardLink.href = adDetails.advertUrl;
                 cardLink.target = '_blank';
-                cardLink.textContent = 'Geh zu Kleinanzeigen';
+                cardLink.textContent = 'Gehe zu Kleinanzeigen';
 
                 // Append elements to the card
                 cardContent.appendChild(cardTitle);
