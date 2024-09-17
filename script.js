@@ -416,6 +416,8 @@ function filterByCategory(category) {
     loadAds(category);
 }
 
+window.filterByCategory = filterByCategory;
+
 // Load all ads when the page loads
 loadAds();
 
