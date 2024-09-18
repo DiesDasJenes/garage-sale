@@ -100,6 +100,10 @@ const adUrls = [
         category: 'Hobbies' 
     },
     { 
+        url: 'https://www.kleinanzeigen.de/s-anzeige/handyhalter-fuer-das-fahrrad/2867286195-217-9436',
+        category: 'Hobbies' 
+    },
+    { 
         url: 'https://www.kleinanzeigen.de/s-anzeige/canon-ts5050-drucker-scanner/2865617508-225-9436',
         category: 'Office' 
     },
@@ -145,6 +149,10 @@ const adUrls = [
     },
     { 
         url: 'https://www.kleinanzeigen.de/s-anzeige/armbanduhr-olivia-burton/2670132776-157-9436',
+        category: 'Electronic' 
+    },
+    { 
+        url: 'https://www.kleinanzeigen.de/s-anzeige/gehaeuseluefter-mit-mainboard-zubehoer/2867058404-225-9436',
         category: 'Electronic' 
     },
     { 
@@ -216,6 +224,14 @@ const adUrls = [
         category: 'Furniture' 
     },
     { 
+        url: 'https://www.kleinanzeigen.de/s-anzeige/pinnwand-mit-stoff-und-pins/2867274747-246-9436',
+        category: 'Furniture' 
+    },
+    { 
+        url: 'https://www.kleinanzeigen.de/s-anzeige/wandregal-bretter/2867049302-88-9436',
+        category: 'Furniture' 
+    },
+    { 
         url: 'https://www.kleinanzeigen.de/s-anzeige/campingstuhl/2864662415-230-9436',
         category: 'Outdoor' 
     },
@@ -233,6 +249,22 @@ const adUrls = [
     },
     { 
         url: 'https://www.kleinanzeigen.de/s-anzeige/xxl-picknickdecke/2864925369-187-9436',
+        category: 'Outdoor' 
+    },
+    { 
+        url: 'https://www.kleinanzeigen.de/s-anzeige/rankengitter/2867122167-89-9436',
+        category: 'Outdoor' 
+    },
+    { 
+        url: 'https://www.kleinanzeigen.de/s-anzeige/designer-balkon-blumentopf-in-gruen-und-beige/2867023614-89-9436',
+        category: 'Outdoor' 
+    },
+    { 
+        url: 'https://www.kleinanzeigen.de/s-anzeige/runder-blumentopf-fuer-den-balkon-mit-halterung-fuer-das-gelaender/2867021086-89-9436',
+        category: 'Outdoor' 
+    },
+    { 
+        url: 'https://www.kleinanzeigen.de/s-anzeige/balkontopf-mit-halterung/2867018566-89-9436',
         category: 'Outdoor' 
     },
     { 
@@ -292,6 +324,10 @@ const adUrls = [
         category: 'Kitchen' 
     },
     { 
+        url: 'https://www.kleinanzeigen.de/s-anzeige/verkaufe-verschiedene-vorratsglaeser-und-kleinere-flaschen/2867072880-86-9436',
+        category: 'Kitchen' 
+    },
+    { 
         url: 'https://www.kleinanzeigen.de/s-anzeige/leggins-schwarz/2688847812-154-9436',
         category: 'Clothes' 
     },
@@ -331,6 +367,14 @@ const adUrls = [
         url: 'https://www.kleinanzeigen.de/s-anzeige/plateau-high-heels/2785821555-159-9436',
         category: 'Clothes' 
     },
+    { 
+        url: 'https://www.kleinanzeigen.de/s-anzeige/foehn-mit-ausziehbarem-kabel/2867287621-176-9436',
+        category: 'Bathroom' 
+    },
+    { 
+        url: 'https://www.kleinanzeigen.de/s-anzeige/waeschestaender-mit-waescheklammern/2867041234-87-9436',
+        category: 'Bathroom' 
+    },
 ];
 
 // Function to fetch ad details and extract meta tags
@@ -362,63 +406,73 @@ async function fetchAdDetails(adUrl) {
     }
 }
 
-// Dynamically load ads into the grid based on category
-async function loadAds(category = null) {
+async function loadAds() {
     const adsContainer = document.getElementById('ads-container');
-    adsContainer.innerHTML = '';  // Clear the container before loading new ads
+    if (!adsContainer) {
+        console.error('Ads container not found');
+        return;
+    }
 
-    for (const ad of adUrls) {
-        if (!category || ad.category === category) {  // Filter ads by category
-            const adDetails = await fetchAdDetails(ad.url);
-            if (adDetails) {
-                // Create card
-                const card = document.createElement('div');
-                card.className = 'bg-white shadow-lg rounded-lg overflow-hidden';
+    adsContainer.innerHTML = ''; 
 
-                const image = document.createElement('img');
-                image.className = 'w-full h-64 object-cover';
-                image.src = adDetails.imageUrl;
-                image.alt = adDetails.title;
+for (const ad of adUrls) {
+    const adDetails = await fetchAdDetails(ad.url);
+    if (adDetails) {
+        // Create a card for the ad
+        const card = document.createElement('div');
+        card.className = 'bg-white shadow-lg rounded-lg overflow-hidden card';
+        card.dataset.category = ad.category; // Set category for filtering
 
-                const cardContent = document.createElement('div');
-                cardContent.className = 'p-6';
+        const image = document.createElement('img');
+        image.className = 'w-full h-64 object-cover';
+        image.src = adDetails.imageUrl;
+        image.alt = adDetails.title;
 
-                const cardTitle = document.createElement('h3');
-                cardTitle.className = 'text-xl font-semibold mb-2';
-                cardTitle.textContent = adDetails.title;
+        const cardContent = document.createElement('div');
+        cardContent.className = 'p-6';
 
-                const cardDescription = document.createElement('p');
-                cardDescription.className = 'text-gray-600 mb-4';
-                cardDescription.textContent = adDetails.description;
+        const cardTitle = document.createElement('h3');
+        cardTitle.className = 'text-xl font-semibold mb-2';
+        cardTitle.textContent = adDetails.title;
 
-                const cardLink = document.createElement('a');
-                cardLink.className = 'inline-block px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600';
-                cardLink.href = adDetails.advertUrl;
-                cardLink.target = '_blank';
-                cardLink.textContent = 'Gehe zu Kleinanzeigen';
+        const cardDescription = document.createElement('p');
+        cardDescription.className = 'text-gray-600 mb-4';
+        cardDescription.textContent = adDetails.description;
 
-                // Append elements to the card
-                cardContent.appendChild(cardTitle);
-                cardContent.appendChild(cardDescription);
-                cardContent.appendChild(cardLink);
-                card.appendChild(image);
-                card.appendChild(cardContent);
+        const cardLink = document.createElement('a');
+        cardLink.className = 'inline-block px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600';
+        cardLink.href = adDetails.advertUrl;
+        cardLink.target = '_blank';
+        cardLink.textContent = 'View on Kleinanzeigen';
 
-                // Add card to the container
-                adsContainer.appendChild(card);
-            }
-        }
+        cardContent.appendChild(cardTitle);
+        cardContent.appendChild(cardDescription);
+        cardContent.appendChild(cardLink);
+        card.appendChild(image);
+        card.appendChild(cardContent);
+
+        // Append the card to the container
+        adsContainer.appendChild(card);
     }
 }
-
-// Function to filter ads by category
-function filterByCategory(category) {
-    loadAds(category);
 }
 
-window.filterByCategory = filterByCategory;
+
+function filterAds(category) {
+    const cards = document.querySelectorAll('.card');
+
+    cards.forEach((card) => {
+        if (category === 'All' || card.dataset.category === category) {
+            card.style.display = 'block'; // Show card
+        } else {
+            card.style.display = 'none';  // Hide card
+        }
+    });
+}
+
+// Expose the filter function globally
+window.filterAds = filterAds;
 
 // Load all ads when the page loads
 loadAds();
 
-// Example: To filter by category, you can call filterByCategory('Plants');
