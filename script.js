@@ -30,16 +30,6 @@ const adUrls = [
     source: "Kleinanzeigen",
   },
   {
-    url: "https://www.kleinanzeigen.de/s-anzeige/fahrradbremsen/2865419968-217-9436",
-    category: "Hobbies",
-    source: "Kleinanzeigen",
-  },
-  {
-    url: "https://www.kleinanzeigen.de/s-anzeige/kettenoel-mit-green-disc/2865416170-230-9436",
-    category: "Hobbies",
-    source: "Kleinanzeigen",
-  },
-  {
     url: "https://www.kleinanzeigen.de/s-anzeige/360-fahrradreflektoren/2865410755-230-9436",
     category: "Hobbies",
     source: "Kleinanzeigen",
@@ -85,11 +75,6 @@ const adUrls = [
     source: "Kleinanzeigen",
   },
   {
-    url: "https://www.kleinanzeigen.de/s-anzeige/lenkdrachen-fastrider-skymonkey/2832319397-230-9436",
-    category: "Hobbies",
-    source: "Kleinanzeigen",
-  },
-  {
     url: "https://www.kleinanzeigen.de/s-anzeige/schwimmbrille-speedo-iqfit/2832328148-230-9436",
     category: "Hobbies",
     source: "Kleinanzeigen",
@@ -115,11 +100,6 @@ const adUrls = [
     source: "Kleinanzeigen",
   },
   {
-    url: "https://www.kleinanzeigen.de/s-anzeige/handyhalter-fuer-das-fahrrad/2867286195-217-9436",
-    category: "Hobbies",
-    source: "Kleinanzeigen",
-  },
-  {
     url: "https://www.kleinanzeigen.de/s-anzeige/canon-ts5050-drucker-scanner/2865617508-225-9436",
     category: "Office",
     source: "Kleinanzeigen",
@@ -141,11 +121,6 @@ const adUrls = [
   },
   {
     url: "https://www.kleinanzeigen.de/s-anzeige/flash-mob-bluetooth-speaker/2865620577-168-9436",
-    category: "Electronic",
-    source: "Kleinanzeigen",
-  },
-  {
-    url: "https://www.kleinanzeigen.de/s-anzeige/beutelloser-staubsauger/2864931578-176-9436",
     category: "Electronic",
     source: "Kleinanzeigen",
   },
@@ -196,11 +171,6 @@ const adUrls = [
   },
   {
     url: "https://www.kleinanzeigen.de/s-anzeige/holzlack-und-farbenset/2864691712-282-9436",
-    category: "DIY",
-    source: "Kleinanzeigen",
-  },
-  {
-    url: "https://www.kleinanzeigen.de/s-anzeige/maler-set-zum-streichen-von-waenden/2864678711-282-9436",
     category: "DIY",
     source: "Kleinanzeigen",
   },
@@ -330,22 +300,12 @@ const adUrls = [
     source: "Kleinanzeigen",
   },
   {
-    url: "https://www.kleinanzeigen.de/s-anzeige/verschiedene-schnapsglaeser/2863979453-86-9436",
-    category: "Kitchen",
-    source: "Kleinanzeigen",
-  },
-  {
     url: "https://www.kleinanzeigen.de/s-anzeige/kleines-glas-22cl-granit/2863974416-86-9436",
     category: "Kitchen",
     source: "Kleinanzeigen",
   },
   {
     url: "https://www.kleinanzeigen.de/s-anzeige/ikea-dyrgrip/2863969960-86-9436",
-    category: "Kitchen",
-    source: "Kleinanzeigen",
-  },
-  {
-    url: "https://www.kleinanzeigen.de/s-anzeige/kupferbecher-strohhalm/2863963619-86-9436",
     category: "Kitchen",
     source: "Kleinanzeigen",
   },
@@ -533,17 +493,7 @@ const adUrls = [
     url: "https://www.vinted.de/items/1505243757-echtleder-keil-stiefeletten-braun",
     category: "Clothes",
     source: "Vinted",
-  },
-  {
-    url: "https://www.kleinanzeigen.de/s-anzeige/foehn-mit-ausziehbarem-kabel/2867287621-176-9436",
-    category: "Bathroom",
-    source: "Kleinanzeigen",
-  },
-  {
-    url: "https://www.kleinanzeigen.de/s-anzeige/waeschestaender-mit-waescheklammern/2867041234-87-9436",
-    category: "Bathroom",
-    source: "Kleinanzeigen",
-  },
+  }
 ];
 
 // Function to fetch ad details and extract meta tags
