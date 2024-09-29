@@ -155,6 +155,36 @@ const adUrls = [
     source: "Kleinanzeigen",
   },
   {
+    url: "https://www.kleinanzeigen.de/s-anzeige/externe-festplatte-1tb-wd-elements/2876668194-225-9436",
+    category: "Electronic",
+    source: "Kleinanzeigen",
+  },
+  {
+    url: "https://www.kleinanzeigen.de/s-anzeige/arduino-uno-rev1/2876426667-168-9436",
+    category: "Electronic",
+    source: "Kleinanzeigen",
+  },
+  {
+    url: "https://www.kleinanzeigen.de/s-anzeige/festplattenrettung-logilink/2876418625-225-9436",
+    category: "Electronic",
+    source: "Kleinanzeigen",
+  },
+  {
+    url: "https://www.kleinanzeigen.de/s-anzeige/wireless-charger-10w-fast-charging-pad/2876413956-173-9436",
+    category: "Electronic",
+    source: "Kleinanzeigen",
+  },
+  {
+    url: "https://www.kleinanzeigen.de/s-anzeige/intenso-memory-2-move-pro-1tb/2876409378-225-9436",
+    category: "Electronic",
+    source: "Kleinanzeigen",
+  },
+  {
+    url: "https://www.kleinanzeigen.de/s-anzeige/yi-4k-action-camera/2876400418-245-9436",
+    category: "Electronic",
+    source: "Kleinanzeigen",
+  },
+  {
     url: "https://www.kleinanzeigen.de/s-anzeige/holzbretter/2865390176-84-9436",
     category: "DIY",
     source: "Kleinanzeigen",
